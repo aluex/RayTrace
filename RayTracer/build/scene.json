@@ -1,0 +1,207 @@
+{
+    "DEFAULT_EPSILON": 1e-5,
+    "DEFAULT_DOTSIZE": 0.1,
+    "DEFAULT_INV_GAMMA": 0.5555555555555556,
+    "DEFAULT_PERSPECTIVE": true,
+    "DEFAULT_HN": 4,
+    "DEFAULT_WN": 4,
+    "MAX_DEPTH": 4,
+    "secondRayControl": 0.3,
+    "extraRayTest": 0,
+    "Samplers":
+    [
+        {
+            "type": "JitterSamper",
+            "capacity": 81,
+            "numSet": 5
+        }
+    ],
+    "Camera":
+    {
+        "cameraTheta":0,
+        "cameraRadius":100,
+        "aperture":5,
+        "focalDis":12,
+        "normal":[1,0,-1]
+    },
+    "Frame":
+    {
+        "width": 800,
+        "height": 640,
+        "dotSize": 0.05,
+        "samperIndex": 0,
+        "center": [0,0,20],
+        "rightHandSide": -1,
+        "e1": [0,0,1],
+        "e2": [0,1,0]
+    },
+    "Lights":
+    [
+        {
+            "position":[0,0,40],
+            "color":[255,255,255],
+            "intensity":1,
+            "size":4
+        },
+        {
+            "position":[6,7,40],
+            "color":[255,255,255],
+            "intensity":1,
+            "size":4
+        },
+        {
+            "position":[12,7,46],
+            "color":[255,255,255],
+            "intensity":1,
+            "size":4
+        }
+    ],
+    "Materials":
+    [
+        {
+            "name":"SphereMaterial",
+            "reflectionFact": 0.6
+        },
+        {
+            "name":"planeMaterial",
+            "reflectionFact": 0.1,
+            "refractionFact": 0,
+            "diffuseFact": [1,1,1],
+            "glossyFact": 0.5
+        },
+        {
+            "name":"imageMaterial",
+            "specularFact": [0.2, 0.2, 0.2],
+            "diffuseFact": [1,1,1],
+            "reflectionFact": 0,
+            "refractionFact": 0
+        },
+        {
+            "name":"glassMaterial",
+            "reflectionFact": 0.1,
+            "refractionFact": 0.9,
+            "specularPower": 100,
+            "diffuseFact": [0.1, 0.1, 0],
+            "N": 1.2
+        },
+        {
+            "name": "objMaterial",
+            "reflectionFact": 0.5,
+            "refractionFact": 0,
+            "diffuseFact": [1,1,1],
+            "specularPower": 30
+        }
+    ],
+    "Objects":
+    [
+        {
+            "geometry":"Sphere",
+            "position":[80,0,14],
+            "radius":4,
+            "materialIndex":0,
+            "color": [255,0,0]
+        },
+        {
+            "geometry":"Sphere",
+            "position":[80,8,16],
+            "color": [0,0,255],
+            "radius":4,
+            "enabled": true,
+            "materialIndex":0
+        },
+        {
+            "geometry":"Sphere",
+            "position":[60,3.5,4],
+            "color": [255,255,255],
+            "radius":3,
+            "enabled": true,
+            "materialIndex":3
+        },
+        {
+            "geometry": "Plane",
+            "color": [255,255,255],
+            "position": [1,0,0],
+            "normal": [0,0,1],
+            "enabled": true,
+            "materialIndex": 1
+        },
+        {
+            "geometry": "ImagePlane",
+            "position": [300,0,-1],
+            "normal": [-1,0,0],
+            "materialIndex": 2,
+            "gridSize": 0.1,
+            "picSource": "background.jpg",
+            "e1": [0,0,-1],
+            "e2": [0,-1,0],
+            "heightBias": 600,
+            "enabled": true,
+            "widthBias": 1000,
+            "repeat": true
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, 10], [2, -4, 4], [2, 0, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, 10], [2, 0, 4], [6, 0, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, 10], [6, 0, 4], [6, -4, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, 10], [6, -4, 4], [2, -4, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, -2], [2, -4, 4], [2, 0, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, -2], [2, 0, 4], [6, 0, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, -2], [6, 0, 4], [6, -4, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Triangle",
+            "points":[[4, -2, -2], [6, -4, 4], [2, -4, 4]],
+            
+            "materialIndex": 3
+        },
+        {
+            "geometry": "Box",
+            "points":[[4, -2, -6],[7, 9, -4]],
+            
+            "materialIndex": 1
+        },
+        {
+            "geometry": "Model",
+            "fileName": "patterngenerator_script_example1.obj",
+            "bias": [120, 0, 12],
+            "scale": 0.2,
+            "rotateAxis": [0,0,1],
+            "rotateDegree": 0.7853975,
+            "color": [255,255,255],
+            "materialIndex": 4
+        }
+    ]
+}
