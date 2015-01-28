@@ -1,7 +1,8 @@
 # RayTrace
-===
 
 a 3D ray-tracing render. This was once one of my term projects for *advanced computer graphics* course.
+
+**Because this is finished in a rush, so there might still be bugs and/or structural suboptimality, please use it carefully. :)**
 
 ### Usage
 + move to the build directory
